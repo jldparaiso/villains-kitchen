@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Villains Kitchen</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+      window.addEventListener('scroll', () => {
+         let parent = document.getElementById('parallax-container');
+         let children = parent.getElementsByClassName('parallax-image');
+         for(let i = 0; i < children.length; i++) {
+           if(i <= 1) {
+             children[i].style.transform = 'translateY(-' + (window.pageYOffset) + 'px)';
+           } else {
+             children[i].style.transform = 'translateY(-' + (window.pageYOffset * 3 / children.length) + 'px)';
+           }
+         }
+      }, false)
+    </script>
+  </head>
+  <body>
+    <div id="parallax-container">
+      <div class="parallax-image container-fluid" style="background: #0c0c0c;"></div>
+      <div class="parallax-image container-fluid" style="background: url(./images/parallax-layer-3.png);"></div>
+      <div class="parallax-image container-fluid" style="background: url(./images/parallax-layer-2.png);"></div>
+      <div class="parallax-image container-fluid" style="background: url(./images/parallax-layer-1.png);"></div>
+
+      <div class="header">
+
+        <a class="logo" href="index.html" title="Villains Kitchen"><img src="./images/vk-logo.png" width="51" height="39" alt="Villain's Kitchen"/></a>
+        <input type="checkbox" id="chk">
+        <label for="chk" class="show-menu-btn">
+          | MENU |
+        </label>
+
+        <ul class="menu">
+          <li><a href="#our-work">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+          <li id="closeMenu"><label for="chk" class="hide-menu-btn" style="font-family: 'Open Sans', sans-serif; font-weight: 300;">
+            Close <i class="fas fa-times"></i>
+          </label></li>
+        </ul>
+      </div>
+      <div id="home" class="container">
+        <div class="hero-text">
+          <h1 style="font-size: 60px; line-height: normal;"><span style="font-size: 34px; font-family: 'NorwesterRegular';">WE CREATE</span>
+          INTUITIVE &<br />
+          IMMERSIVE<br />
+          EXPERIENCES<br /></h1>
+          <p id="intro">Villains Kitchen is an independent design & development consultancy based in Los Angeles. Our focus has always been the work, the people who create it, and the people we create it for.</p>
+          <p id="intro">We are a friendly bunch. Why don't you step inside?</p>
+        </div>
+        <div class="featured-container">
+          <div class="featured-label font-weight-bold font-italic">featured...</div>
+          <div class="featured"><img src="./images/featured-1.jpg" /></div>
+          <div class="featured"><img src="./images/featured-2.jpg" /></div>
+          <div class="featured"><img src="./images/featured-3.jpg" /></div>
+        </div>
+        <div class="row" style="">
+          <div class="col-md-12"><a class="scroll" href="#our-work" style="font-family: 'AGaramondPro-BoldItalic';">view work</a></div>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="our-work" class="container-fluid m-0 p-0" >
+      <div class="container">
+        <div class="col-md-4 mx-auto title pt-4">
+          <h2 style="font-size: 85px;">Our Work</h2>
+          <div class="separator"></div>
+          <p>Villains Kitchen is led by strategy, influenced by design, and inspired by technology.</p>
+        </div>
+        <div class="col-md-10 mx-auto works pb-4">
+          <div class="row">
+
+            <div class="thumb-box col-md-6">
+              <a href="land-rover.html" data-toggle="modal" data-target="#myModal1">
+              <img class="thumb-img" src="./images/thumb1.jpg" data-toggle="modal" data-target="#myModal1"/>
+              <div class="overlay">
+                <div class="plus"><img src="./images/pluscontrol.png"></div>
+              </div>
+            </a>
+            </div>
+
+            <div class="thumb-box col-md-6">
+              <a data-toggle="modal" data-target="#myModal2">
+              <img class="thumb-img" src="./images/thumb2.jpg" data-toggle="modal" data-target="#myModal2"/>
+              <div class="overlay">
+                <div class="plus"><img src="./images/pluscontrol.png"></div>
+              </div>
+            </a>
+            </div>
+
+            <div class="thumb-box col-md-6">
+              <img class="thumb-img" src="./images/thumb3.jpg" />
+              <div class="overlay">
+                <div class="plus"><img src="./images/pluscontrol.png"></div>
+              </div>
+            </div>
+
+            <div class="thumb-box col-md-6">
+              <img class="thumb-img" src="./images/thumb4.jpg" />
+              <div class="overlay">
+                <div class="plus"><img src="./images/pluscontrol.png"></div>
+              </div>
+            </div>
+
+            <div class="thumb-box col-md-6">
+              <img class="thumb-img" src="./images/thumb5.jpg" />
+              <div class="overlay">
+                <div class="plus"><img src="./images/pluscontrol.png"></div>
+              </div>
+            </div>
+
+            <div class="thumb-box col-md-6">
+              <img class="thumb-img" src="./images/thumb6.jpg" />
+              <div class="overlay">
+                <div class="plus"><img src="./images/pluscontrol.png"></div>
+              </div>
+            </div>
+
+            <div class="thumb-box col-md-6">
+              <img class="thumb-img" src="./images/thumb7.jpg" />
+              <div class="overlay">
+                <div class="plus"><img src="./images/pluscontrol.png"></div>
+              </div>
+            </div>
+
+            <div class="thumb-box col-md-6">
+              <img class="thumb-img" src="./images/thumb8.jpg" />
+              <div class="overlay">
+                <div class="plus"><img src="./images/pluscontrol.png"></div>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Modal1 -->
+
+      <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-body text-center">
+          <div class="text-right">
+          <a data-dismiss="modal" aria-label="Close"><img src="./images/xbutton.png"></a>
+          
+
+          
+            <div class="row">
+            <div class="col-2 pl-5 pt-5 text-right">
+            <button type="button" class="btn btn-default btn-prev d-inline-block"><i class="fas fa-chevron-left fa-3x"></i></button>
+            </div>
+
+            <div class="col-8 mx-auto text-center">
+            <h1><span style="font-size: 75px; font-family: 'NorwesterRegular';">T</span>HE LEGENDARY <br> OFF-ROADER</h1>
+            <div class="separator"></div>
+            <small class="text-center d-block" style="font-family: 'Open Sans', sans-serif; font-weight:700;">LAND ROVER</small>
+            </div>
+
+            <div class="col-2 pr-5 pt-5 text-left">
+              <button type="button" class="btn btn-default btn-next"><i class="fas fa-chevron-right fa-3x"></i></button>
+            </div>
+            </div>
+          </div>
+          <!-- img and contents -->
+          <div id="img-handler" class="container-fluid text-center pt-4">
+              <img class="img-fluid" src="./images/lr3.jpg">
+          </div>
+          <!-- img and contents end-->
+          <div class="modal-footer border border-0 d-flex justify-content-center">
+            <button type="button" class="btn btn-default btn-prev"><i class="fas fa-chevron-left"></i></button>
+            <a data-dismiss="modal" aria-label="Close"><img src="./images/xbutton.png"></a>
+            <button type="button" class="btn btn-default btn-next"><i class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal1 End -->
+          
+
+
+
+    <div class="footer py-5" style="background:#0C0C0C;">
+      <div class="row">
+        <div class="col-md-12 py-5">
+          <img src="./images/vk-logo.png" width="22" alt="Villains Kitchen" />
+          <p class="copyright">&copy; 2019 Villains Kitchen LLC. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
