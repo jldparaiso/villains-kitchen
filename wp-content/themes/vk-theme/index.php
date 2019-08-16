@@ -86,7 +86,7 @@ get_header(); ?>
         
 
             <div class="thumb-box col-md-6">
-              <a class="showModal" href="#myModal-<?php the_ID(); ?>"   data-toggle="modal">
+              <a class="showModal" href="#myModal-<?php the_ID(); ?>" data-toggle="modal">
     
               <?php the_post_thumbnail() ?>
               <div class="overlay">

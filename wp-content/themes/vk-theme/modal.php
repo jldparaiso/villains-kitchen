@@ -1,4 +1,4 @@
- 
+
 
 <?php $custom_query = new WP_Query( 
               array( 'post_type' => 'portfolio',
@@ -8,28 +8,43 @@
 
             while($custom_query->have_posts()) : $custom_query->the_post(); ?>
 
+                  <?php 
+                      $next_post = get_next_post();
+                      $next_post_id = $next_post->ID;
+                  ?>
 
-<!-- Modal1 -->
-            
 
-      <div class="modal fade" id="myModal-<?php the_ID(); ?>"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-xl">
-        <div class="modal-body text-center">
-          <div class="text-right">
-          <a data-dismiss="modal" aria-label="Close"><img src="<?php echo get_template_directory_uri(); ?>./images/xbutton.png"></a>
-            
-             
-          
-            <div class="row">
+                  <?php 
+                      $previous_post = get_previous_post();
+                      $previous_post_id = $previous_post->ID;
+                  ?> 
+
+                  
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade border-0" id="myModal-<?php the_ID(); ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl border-0" role="document">
+    <div class="modal-content">
+      <div class="modal-header border-0 text-right">
+         <a id="closeBtn" onclick="close_modal();"><img src="<?php echo get_template_directory_uri(); ?>./images/xbutton.png"></a>
+      </div>
+      <div class="modal-body">
+        
+        <div class="row">
 
             <div id="modal-control-left" class="col-2 pl-5 pt-5 text-right">
-              <?php $next_post = get_adjacent_post(false,'',false);?>
-              <?php $previous_post = get_adjacent_post(false,'',true);?> 
-              <?php if($previous_post->ID != ''): ?>
-              <a href="#myModal-<?php echo $previous_post->ID; ?>" data-toggle="modal" >
+          
+              <?php if($previous_post_id != ''): ?>
+              <a class="nav" href="#myModal-<?php echo $previous_post_id ?>">
             <button type="button" class="prev-post btn btn-default btn-prev d-inline-block"><i class="fas fa-chevron-left fa-3x"></i></button>
               </a>
               <?php endif; ?>
+
             </div>
 
             <div id="modal-title" class="col-6 mx-auto text-center">
@@ -42,37 +57,66 @@
             </div>
 
 
-
             <div id="modal-control-right" class="col-2 pr-5 pt-5 text-left">
-              <?php $next_post = get_adjacent_post(false,'',false);?>
-              <?php $previous_post = get_adjacent_post(false,'',true);?> 
-              <?php if($next_post->ID != ''): ?>
-              <a href="#myModal-<?php echo $next_post->ID; ?>" data-toggle="modal" >
+           
+              <?php if($next_post_id != ''): ?>
+              <a class="nav"  href="#myModal-<?php echo $next_post_id ?>">
               <button type="button" class="next-post btn btn-default btn-next"><i class="fas fa-chevron-right fa-3x"></i></button>
               </a>
               <?php endif; ?>
+
             </div>
-            </div>
-          </div>
-          <!-- img and contents -->
+            
+        </div>
+
           <div id="img-handler" class="container-fluid text-center pt-4">
               <?php echo the_content(); ?>
           </div>
-          <!-- img and contents end-->
-          <div class="modal-footer border border-0 d-flex justify-content-center">
-            <button type="button" class="btn btn-default btn-prev"><i class="fas fa-chevron-left"></i></button>
-            <a data-dismiss="modal" aria-label="Close"><img src="<?php echo get_template_directory_uri(); ?>./images/xbutton.png"></a>
-            <button type="button"  class="btn btn-default btn-next"><i class="fas fa-chevron-right"></i></button>
-          </div>
-        </div>
-
       </div>
-    </div>
+      <div class="modal-footer border border-0 d-flex justify-content-center">
+          <?php if($previous_post_id != ''): ?>
+              <a class="nav" href="#myModal-<?php echo $previous_post_id ?>" data-toggle="modal" data-dismiss="modal">
+                <button type="button" class="btn btn-default btn-prev"><i class="fas fa-chevron-left"></i></button>
+              </a>
+              <?php endif; ?>
 
-<!-- Modal1 End -->
+            <a id="closeBtn" data-dismiss="modal" aria-label="Close"><img src="<?php echo get_template_directory_uri(); ?>./images/xbutton.png"></a>
+
+            <?php if($next_post_id != ''): ?>
+              <a class="nav" href="#myModal-<?php echo $next_post_id ?>" data-toggle="modal" data-dismiss="modal">
+                <button type="button"  class="btn btn-default btn-next"><i class="fas fa-chevron-right"></i></button>
+               </a>
+              <?php endif; ?>
+          </div>
+    </div>
+  </div>
+</div>
+
+
 
 <?php endwhile; ?>
 
+<script type="text/javascript">
+  jQuery(document).ready(function( $ ) {
+      jQuery(".nav").click(function(){
+        jQuery(".modal.fade.border-0").each(function(){
+          jQuery(this).removeClass("show");
+          jQuery(this).hide();
+        });
+        jQuery(jQuery(this).attr('href')).addClass("show");
+        jQuery(jQuery(this).attr('href')).show();
+        console.log(jQuery(this).attr('href') + "added Modal Open");
+      });  
+  });
+
+  
+  function close_modal()
+  {
+    $('.modal.fade.border-0').modal('hide');
+  }
+
+  
+</script>
 
 
 

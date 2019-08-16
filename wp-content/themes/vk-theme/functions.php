@@ -496,3 +496,4 @@ register_sidebar( array(
     'after_title'   => '</h2>',
     ) );
 
+wp_enqueue_script("jquery");
