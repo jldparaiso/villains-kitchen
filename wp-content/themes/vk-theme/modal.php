@@ -23,15 +23,12 @@
 
 
 
-
-
-
 <!-- Modal -->
 <div class="modal fade border-0" id="myModal-<?php the_ID(); ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl border-0" role="document">
     <div class="modal-content">
       <div class="modal-header border-0 text-right">
-         <a id="closeBtn" onclick="close_modal();"><img src="<?php echo get_template_directory_uri(); ?>./images/xbutton.png"></a>
+         <a id="closeBtn"  data-dismiss="modal" aria-label="Close" class="close"><img src="<?php echo get_template_directory_uri(); ?>./images/xbutton.png"></a>
       </div>
       <div class="modal-body">
         
@@ -75,7 +72,7 @@
       </div>
       <div class="modal-footer border border-0 d-flex justify-content-center">
           <?php if($previous_post_id != ''): ?>
-              <a class="nav" href="#myModal-<?php echo $previous_post_id ?>" data-toggle="modal" data-dismiss="modal">
+              <a class="nav" href="#myModal-<?php echo $previous_post_id ?>">
                 <button type="button" class="btn btn-default btn-prev"><i class="fas fa-chevron-left"></i></button>
               </a>
               <?php endif; ?>
@@ -83,7 +80,7 @@
             <a id="closeBtn" data-dismiss="modal" aria-label="Close"><img src="<?php echo get_template_directory_uri(); ?>./images/xbutton.png"></a>
 
             <?php if($next_post_id != ''): ?>
-              <a class="nav" href="#myModal-<?php echo $next_post_id ?>" data-toggle="modal" data-dismiss="modal">
+              <a class="nav" href="#myModal-<?php echo $next_post_id ?>">
                 <button type="button"  class="btn btn-default btn-next"><i class="fas fa-chevron-right"></i></button>
                </a>
               <?php endif; ?>
@@ -110,10 +107,17 @@
   });
 
   
-  function close_modal()
-  {
-    $('.modal.fade.border-0').modal('hide');
-  }
+  // function close_modal()
+  // {
+  //   $('#closeBtn').attr('data-dismiss','modal');
+  // }
+
+
+  jQuery(document).ready(function($){
+  	jQuery("#closeBtn").click(function(){
+  		jQuery("#closeBtn").attr('data-dismiss','modal');
+  	});
+  });
 
   
 </script>
