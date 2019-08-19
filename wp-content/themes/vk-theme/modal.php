@@ -28,7 +28,7 @@
   <div class="modal-dialog modal-xl border-0" role="document">
     <div class="modal-content">
       <div class="modal-header border-0 text-right">
-         <a id="closeBtn"  data-dismiss="modal" aria-label="Close" class="close"><img src="<?php echo get_template_directory_uri(); ?>./images/xbutton.png"></a>
+         <a id="closeBtn"  onclick="close_modal()" class="close"><img src="<?php echo get_template_directory_uri(); ?>./images/xbutton.png"></a>
       </div>
       <div class="modal-body">
         
@@ -107,17 +107,19 @@
   });
 
   
-  // function close_modal()
-  // {
-  //   $('#closeBtn').attr('data-dismiss','modal');
-  // }
+  function close_modal()
+  {
+    $('.modal').attr('data-dismiss','modal');
+    $('.modal').modal('hide'); 
+	$('.modal-backdrop').remove();
+  }
 
 
-  jQuery(document).ready(function($){
-  	jQuery("#closeBtn").click(function(){
-  		jQuery("#closeBtn").attr('data-dismiss','modal');
-  	});
-  });
+  // jQuery(document).ready(function($){
+  // 	jQuery("#closeBtn").click(function(){
+  // 		jQuery("#closeBtn").attr('data-dismiss','modal');
+  // 	});
+  // });
 
   
 </script>
